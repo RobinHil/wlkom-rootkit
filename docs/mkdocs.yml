@@ -1,0 +1,85 @@
+site_name: wlkom-rootkit
+site_description: Documentation d'un rootkit Linux pedagogique en module kernel
+site_author: wlkom-rootkit contributors
+use_directory_urls: false
+
+theme:
+  name: material
+  language: fr
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - content.tabs.link
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-auto
+        name: Passer au mode clair
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Passer au mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Passer au mode automatique
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.snippets
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+nav:
+  - Accueil: index.md
+  - Prérequis: pages/prerequisites/prerequisites.md
+  - Installation:
+      - VM Victime: pages/setup/victim-vm.md
+      - VM Attaquante: pages/setup/attacking-vm.md
+      - Rootkit: pages/setup/rootkit.md
+  - Utilisation:
+      - Interface CLI: pages/usage/cli.md
+      - Connexion: pages/usage/connection.md
+      - Commandes: pages/usage/commands.md
+  - Fonctionnalités:
+      - Persistance: pages/features/persistence.md
+      - Authentification: pages/features/password.md
+      - Cacher le module: pages/features/hide-module.md
+      - Cacher une ligne: pages/features/hide-line.md
+      - Chiffrement: pages/features/cipher.md

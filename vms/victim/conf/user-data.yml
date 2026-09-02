@@ -1,0 +1,10 @@
+#cloud-config
+users:
+  - name: UBUNTU_USER
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    lock_passwd: false
+    passwd: UBUNTU_PASSWD
+ssh_pwauth: false
+chpasswd:
+  expire: false

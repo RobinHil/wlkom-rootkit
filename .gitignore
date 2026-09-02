@@ -1,0 +1,25 @@
+# python
+*venv*
+*__pycache__*
+*.egg-info
+
+# secrets
+attacking_program/.env
+
+# general
+build
+test
+
+# c
+*.o
+*.d
+*.ko
+*.mod
+*.mod.c
+*.mod.o
+*.symvers
+*.order
+.*.cmd
+.tmp_versions/
+Module.symvers
+modules.order

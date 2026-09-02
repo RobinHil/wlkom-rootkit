@@ -1,0 +1,17 @@
+#cloud-config
+users:
+  - name: ROCKY_USER
+    groups: [wheel]
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    lock_passwd: false
+    ssh_authorized_keys:
+      - ROCKY_SSH_PUBKEY
+  - name: root
+    lock_passwd: true
+ssh_pwauth: false
+chpasswd:
+  expire: false
+
+runcmd:
+  - chown -R ROCKY_USER:ROCKY_USER /home/ROCKY_USER
